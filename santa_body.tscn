@@ -1,0 +1,140 @@
+[gd_scene load_steps=16 format=3 uid="uid://d0sestry14rms"]
+
+[ext_resource type="Texture2D" uid="uid://ggisienrta5e" path="res://JG-assets/Player/Santa - Sprite Sheet.png" id="1_nn1ic"]
+
+[sub_resource type="GDScript" id="GDScript_b3bbt"]
+script/source = "extends CharacterBody2D
+
+const max_speed = 150
+const accel = 1500
+const friction = 1000
+
+var direction = Vector2.ZERO
+
+func _physics_process(delta):
+	player_movement(delta)
+
+func get_input():
+	direction.x = int(Input.is_action_pressed(\"ui_right\")) - int(Input.is_action_pressed(\"ui_left\"))
+	direction.y = int(Input.is_action_pressed(\"ui_down\")) - int(Input.is_action_pressed(\"ui_up\"))
+	return direction.normalized()
+	
+func player_movement(delta):
+	direction = get_input()
+	
+	if direction == Vector2.ZERO:
+		if velocity.length() > (friction * delta):
+			velocity -= velocity.normalized() * (friction * delta)
+		else:
+			velocity = Vector2.ZERO
+	else:
+		velocity += (direction * accel * delta)
+		velocity = velocity.limit_length(max_speed)
+	move_and_slide()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdu2b"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(0, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edvt0"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(96, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xxm0"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(192, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orr71"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(288, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy3qs"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(384, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2osoy"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(96, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7hh3"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(192, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsky4"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(288, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5id5"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(96, 320, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_as8aj"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(192, 320, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhpsj"]
+atlas = ExtResource("1_nn1ic")
+region = Rect2(288, 320, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xxyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdu2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edvt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xxm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orr71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy3qs")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2osoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7hh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsky4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5id5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_as8aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhpsj")
+}],
+"loop": true,
+"name": &"Punch",
+"speed": 16.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om8dk"]
+size = Vector2(10, 15.5)
+
+[node name="Santa_body" type="CharacterBody2D"]
+script = SubResource("GDScript_b3bbt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, -8)
+sprite_frames = SubResource("SpriteFrames_8xxyf")
+animation = &"Idle"
+frame_progress = 0.337441
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_om8dk")
