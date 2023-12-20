@@ -156,8 +156,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om8dk"]
 size = Vector2(10, 15.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj1ir"]
-size = Vector2(22.5, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjdfa"]
+radius = 11.5
 
 [node name="Santa_body" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -173,14 +173,14 @@ frame_progress = 0.150681
 position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_om8dk")
 
-[node name="santa_area" type="Area2D" parent="."]
-position = Vector2(19, -4)
+[node name="attack_area" type="Area2D" parent="."]
+position = Vector2(25, -8)
 script = ExtResource("2_qn0v0")
+aim_range = 50.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="santa_area"]
-position = Vector2(1.25, -2)
-shape = SubResource("RectangleShape2D_bj1ir")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
+shape = SubResource("CircleShape2D_vjdfa")
 
-[node name="Sprite2D" type="Sprite2D" parent="santa_area"]
-scale = Vector2(0.078125, 0.078125)
+[node name="reference_sprite" type="Sprite2D" parent="attack_area"]
+scale = Vector2(0.117188, 0.117188)
 texture = ExtResource("3_k1qw3")
