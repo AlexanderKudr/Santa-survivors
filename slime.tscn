@@ -83,7 +83,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2t1g"]
-radius = 191.212
+radius = 101.079
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3fn8"]
 radius = 13.0
@@ -94,10 +94,9 @@ script = ExtResource("1_0ogr6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rwmk7")
 animation = &"Charge"
-frame_progress = 0.687585
+frame_progress = 0.675292
 
 [node name="slime_detection_area" type="Area2D" parent="."]
-visible = false
 
 [node name="slime_detection" type="CollisionShape2D" parent="slime_detection_area"]
 shape = SubResource("CircleShape2D_p2t1g")
