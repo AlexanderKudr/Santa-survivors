@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0sestry14rms"]
+[gd_scene load_steps=21 format=3 uid="uid://dl8au30qlr6a2"]
 
-[ext_resource type="Texture2D" uid="uid://ggisienrta5e" path="res://JG-assets/Player/Santa - Sprite Sheet.png" id="1_nn1ic"]
+[ext_resource type="Texture2D" uid="uid://ggisienrta5e" path="res://JG-assets/Player/Santa - Sprite Sheet.png" id="1_ux46o"]
 
 [sub_resource type="GDScript" id="GDScript_b3bbt"]
 script/source = "extends CharacterBody2D
@@ -34,48 +34,64 @@ func player_movement(delta):
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdu2b"]
-atlas = ExtResource("1_nn1ic")
+atlas = ExtResource("1_ux46o")
 region = Rect2(0, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edvt0"]
-atlas = ExtResource("1_nn1ic")
+atlas = ExtResource("1_ux46o")
 region = Rect2(96, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xxm0"]
-atlas = ExtResource("1_nn1ic")
+atlas = ExtResource("1_ux46o")
 region = Rect2(192, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orr71"]
-atlas = ExtResource("1_nn1ic")
+atlas = ExtResource("1_ux46o")
 region = Rect2(288, 32, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qy3qs"]
-atlas = ExtResource("1_nn1ic")
+atlas = ExtResource("1_ux46o")
 region = Rect2(384, 32, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2osoy"]
-atlas = ExtResource("1_nn1ic")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxkh2"]
+atlas = ExtResource("1_ux46o")
+region = Rect2(0, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht4xm"]
+atlas = ExtResource("1_ux46o")
 region = Rect2(96, 224, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c7hh3"]
-atlas = ExtResource("1_nn1ic")
+[sub_resource type="AtlasTexture" id="AtlasTexture_anf64"]
+atlas = ExtResource("1_ux46o")
 region = Rect2(192, 224, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dsky4"]
-atlas = ExtResource("1_nn1ic")
+[sub_resource type="AtlasTexture" id="AtlasTexture_b27ht"]
+atlas = ExtResource("1_ux46o")
 region = Rect2(288, 224, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5id5"]
-atlas = ExtResource("1_nn1ic")
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5sko"]
+atlas = ExtResource("1_ux46o")
+region = Rect2(384, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iucah"]
+atlas = ExtResource("1_ux46o")
+region = Rect2(0, 320, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3prn"]
+atlas = ExtResource("1_ux46o")
 region = Rect2(96, 320, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_as8aj"]
-atlas = ExtResource("1_nn1ic")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivmnk"]
+atlas = ExtResource("1_ux46o")
 region = Rect2(192, 320, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhpsj"]
-atlas = ExtResource("1_nn1ic")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cvmb"]
+atlas = ExtResource("1_ux46o")
 region = Rect2(288, 320, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwcvc"]
+atlas = ExtResource("1_ux46o")
+region = Rect2(384, 320, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8xxyf"]
 animations = [{
@@ -101,22 +117,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2osoy")
+"texture": SubResource("AtlasTexture_vxkh2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c7hh3")
+"texture": SubResource("AtlasTexture_ht4xm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dsky4")
+"texture": SubResource("AtlasTexture_anf64")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x5id5")
+"texture": SubResource("AtlasTexture_b27ht")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_as8aj")
+"texture": SubResource("AtlasTexture_u5sko")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bhpsj")
+"texture": SubResource("AtlasTexture_iucah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3prn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivmnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cvmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwcvc")
 }],
 "loop": true,
 "name": &"Punch",
@@ -126,15 +154,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om8dk"]
 size = Vector2(10, 15.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj1ir"]
+size = Vector2(20, 12)
+
 [node name="Santa_body" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = SubResource("GDScript_b3bbt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(12, -8)
 sprite_frames = SubResource("SpriteFrames_8xxyf")
 animation = &"Idle"
-frame_progress = 0.337441
+frame_progress = 0.0312881
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_om8dk")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, -6)
+shape = SubResource("RectangleShape2D_bj1ir")
