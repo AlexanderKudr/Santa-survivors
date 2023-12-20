@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn4ua1fojt8pd"]
+[gd_scene load_steps=12 format=3 uid="uid://dn4ua1fojt8pd"]
 
+[ext_resource type="Script" path="res://slime.gd" id="1_4ia0c"]
 [ext_resource type="Texture2D" uid="uid://cvq4hyclw61vv" path="res://JG-assets/Mobs/Slimes/PurpleSlime.png" id="1_38ft3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3duge"]
@@ -46,7 +47,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Charge",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -63,19 +64,23 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_p2t1g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4pkc"]
-radius = 93.086
+radius = 172.012
 
 [node name="slime_body" type="CharacterBody2D"]
+script = ExtResource("1_4ia0c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rwmk7")
 animation = &"Charge"
-frame_progress = 0.000131024
+frame_progress = 0.219006
 
-[node name="slime_detection" type="CollisionShape2D" parent="."]
+[node name="slime_collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p2t1g")
 
 [node name="slime_area" type="Area2D" parent="."]
 
-[node name="slime_collision" type="CollisionShape2D" parent="slime_area"]
+[node name="slime_detection" type="CollisionShape2D" parent="slime_area"]
 shape = SubResource("CircleShape2D_y4pkc")
+
+[connection signal="body_entered" from="slime_area" to="." method="_on_slime_area_body_entered"]
+[connection signal="body_exited" from="slime_area" to="." method="_on_slime_area_body_exited"]
