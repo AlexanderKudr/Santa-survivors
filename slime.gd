@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var chase = false
 const SPEED = 75
-@onready var santa = get_node("../Santa_body")
+@onready var santa = get_node("../../Santa_body")
 
 func _physics_process(delta):
 	var anim = get_node("AnimatedSprite2D")
@@ -12,7 +12,6 @@ func _physics_process(delta):
 		
 		anim.flip_h = direction.x < 0
 		velocity = direction * SPEED
-		print(direction)
 	else:
 		anim.play("Slimes idle")
 		velocity = Vector2.ZERO
