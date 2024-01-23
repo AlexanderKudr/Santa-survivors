@@ -1,39 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://dl8au30qlr6a2"]
+[gd_scene load_steps=20 format=3 uid="uid://dl8au30qlr6a2"]
 
+[ext_resource type="Script" path="res://Player/santa.gd" id="1_7lem4"]
 [ext_resource type="Texture2D" uid="uid://ggisienrta5e" path="res://JG-assets/Player/Santa - Sprite Sheet.png" id="1_ux46o"]
-[ext_resource type="Script" path="res://santa_area.gd" id="2_qn0v0"]
-[ext_resource type="Texture2D" uid="uid://bhnco7l8tmqlc" path="res://icon.svg" id="3_k1qw3"]
-
-[sub_resource type="GDScript" id="GDScript_b3bbt"]
-script/source = "extends CharacterBody2D
-
-const max_speed = 150
-const accel = 1500
-const friction = 1000
-
-var direction = Vector2.ZERO
-
-func _physics_process(delta):
-	player_movement(delta)
-
-func get_input():
-	direction.x = int(Input.is_action_pressed(\"ui_right\")) - int(Input.is_action_pressed(\"ui_left\"))
-	direction.y = int(Input.is_action_pressed(\"ui_down\")) - int(Input.is_action_pressed(\"ui_up\"))
-	return direction.normalized()
-	
-func player_movement(delta):
-	direction = get_input()
-	
-	if direction == Vector2.ZERO:
-		if velocity.length() > (friction * delta):
-			velocity -= velocity.normalized() * (friction * delta)
-		else:
-			velocity = Vector2.ZERO
-	else:
-		velocity += (direction * accel * delta)
-		velocity = velocity.limit_length(max_speed)
-	move_and_slide()
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rdu2b"]
 atlas = ExtResource("1_ux46o")
@@ -156,31 +124,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om8dk"]
 size = Vector2(10, 15.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vjdfa"]
-radius = 11.5
-
 [node name="Santa_body" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-script = SubResource("GDScript_b3bbt")
+script = ExtResource("1_7lem4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(12, -8)
 sprite_frames = SubResource("SpriteFrames_8xxyf")
 animation = &"Idle"
-frame_progress = 0.150681
+frame = 1
+frame_progress = 0.673866
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_om8dk")
-
-[node name="attack_area" type="Area2D" parent="."]
-position = Vector2(25, -8)
-script = ExtResource("2_qn0v0")
-aim_range = 50.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_area"]
-shape = SubResource("CircleShape2D_vjdfa")
-
-[node name="reference_sprite" type="Sprite2D" parent="attack_area"]
-scale = Vector2(0.117188, 0.117188)
-texture = ExtResource("3_k1qw3")
