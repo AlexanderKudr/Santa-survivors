@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var enemy_chase_player = false
 const SPEED = 75
-@onready var santa = get_node("../Santa_body")
+@onready var santa = get_node("../../Santa_body")
 
 func _physics_process(_delta):
 	var anim = get_node("AnimatedSprite2D")

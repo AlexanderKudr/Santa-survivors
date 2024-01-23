@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn4ua1fojt8pd"]
+[gd_scene load_steps=11 format=3 uid="uid://dn4ua1fojt8pd"]
 
 [ext_resource type="Script" path="res://Enemies/slime.gd" id="1_4ia0c"]
 [ext_resource type="Texture2D" uid="uid://cvq4hyclw61vv" path="res://JG-assets/Mobs/Slimes/PurpleSlime.png" id="1_38ft3"]
@@ -61,10 +61,8 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_p2t1g"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_y4pkc"]
-radius = 172.012
+radius = 1231.09
 
 [node name="slime_body" type="CharacterBody2D"]
 script = ExtResource("1_4ia0c")
@@ -73,9 +71,6 @@ script = ExtResource("1_4ia0c")
 sprite_frames = SubResource("SpriteFrames_rwmk7")
 animation = &"Charge"
 frame_progress = 0.219006
-
-[node name="slime_collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_p2t1g")
 
 [node name="slime_area" type="Area2D" parent="."]
 
