@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8u2vqbwpt2md"]
+[gd_scene load_steps=7 format=3 uid="uid://do1junknipcfi"]
 
-[ext_resource type="Texture2D" uid="uid://dpom0kfo67eti" path="res://JG-assets/Environment/1-sheet.png" id="1_wba48"]
+[ext_resource type="Texture2D" uid="uid://dpom0kfo67eti" path="res://Assets/Environment/1-sheet.png" id="1_wba48"]
 [ext_resource type="PackedScene" uid="uid://dl8au30qlr6a2" path="res://Player/santa.tscn" id="2_pnr7c"]
-[ext_resource type="PackedScene" uid="uid://dn4ua1fojt8pd" path="res://Enemies/slime.tscn" id="3_pw2ip"]
 [ext_resource type="PackedScene" uid="uid://uhtjjktu0jhv" path="res://Player/Cursor/custorm_cursor.tscn" id="4_310cs"]
 [ext_resource type="Script" path="res://Player/Cursor/custom_cursor.gd" id="5_lu0ag"]
 
@@ -19,6 +18,10 @@ sources/1 = SubResource("TileSetAtlasSource_otipy")
 
 [node name="World" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(5.56205, 5.66851)
 tile_set = SubResource("TileSet_vflpg")
@@ -27,10 +30,6 @@ layer_0/tile_data = PackedInt32Array(131074, 65537, 0, 65538, 65537, 0, 65539, 1
 
 [node name="Santa_body" parent="." instance=ExtResource("2_pnr7c")]
 position = Vector2(527, 313)
-
-[node name="slime_body" parent="." instance=ExtResource("3_pw2ip")]
-visible = false
-position = Vector2(684, 319)
 
 [node name="CustormCursor" parent="." instance=ExtResource("4_310cs")]
 script = ExtResource("5_lu0ag")
