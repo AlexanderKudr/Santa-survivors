@@ -340,12 +340,13 @@ script = ExtResource("1_7lem4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bc8fl")
-animation = &"run"
+animation = &"idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)
 shape = SubResource("RectangleShape2D_om8dk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
