@@ -1,7 +1,7 @@
 extends Area2D
 
 const SPEED = 1000
-const RANGE = 600
+const RANGE = 300
 
 var travelled_distance = 0
 

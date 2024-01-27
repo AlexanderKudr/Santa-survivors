@@ -1,30 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://dl8au30qlr6a2"]
+[gd_scene load_steps=38 format=3 uid="uid://dl8au30qlr6a2"]
 
 [ext_resource type="Script" path="res://Player/santa.gd" id="1_7lem4"]
-[ext_resource type="Texture2D" uid="uid://blyg85otkyqvw" path="res://Assets/Player/spriteSheets/santa throw left.png" id="2_1ixti"]
 [ext_resource type="Texture2D" uid="uid://dya2o0jsl530m" path="res://Assets/Player/spriteSheets/Santa throw.png" id="3_uuwm0"]
 [ext_resource type="Texture2D" uid="uid://ggisienrta5e" path="res://Assets/Player/spriteSheets/Santa - Sprite Sheet.png" id="4_1ige6"]
 [ext_resource type="Texture2D" uid="uid://cvhyvdjm54xsq" path="res://Assets/Player/spriteSheets/Santa power up.png" id="5_rd07g"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bu600"]
-atlas = ExtResource("2_1ixti")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bhh0o"]
-atlas = ExtResource("2_1ixti")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t428w"]
-atlas = ExtResource("2_1ixti")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2aqm"]
-atlas = ExtResource("2_1ixti")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ngpd"]
-atlas = ExtResource("2_1ixti")
-region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nufsf"]
 atlas = ExtResource("3_uuwm0")
@@ -73,26 +52,6 @@ region = Rect2(480, 992, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4msef"]
 atlas = ExtResource("4_1ige6")
 region = Rect2(608, 992, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qioff"]
-atlas = ExtResource("4_1ige6")
-region = Rect2(64, 1088, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s08jo"]
-atlas = ExtResource("4_1ige6")
-region = Rect2(160, 1088, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_51w6y"]
-atlas = ExtResource("4_1ige6")
-region = Rect2(256, 1088, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjiot"]
-atlas = ExtResource("4_1ige6")
-region = Rect2(352, 1088, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dbko3"]
-atlas = ExtResource("4_1ige6")
-region = Rect2(448, 1088, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4otac"]
 atlas = ExtResource("4_1ige6")
@@ -174,26 +133,6 @@ region = Rect2(672, 128, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bu600")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bhh0o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t428w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g2aqm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ngpd")
-}],
-"loop": true,
-"name": &"attack_left",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_nufsf")
 }, {
 "duration": 1.0,
@@ -209,7 +148,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_s1g2n")
 }],
 "loop": true,
-"name": &"attack_right",
+"name": &"attack",
 "speed": 8.0
 }, {
 "frames": [{
@@ -240,26 +179,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qioff")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s08jo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_51w6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjiot")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dbko3")
-}],
-"loop": true,
-"name": &"idle_left",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_4otac")
 }, {
 "duration": 1.0,
@@ -275,7 +194,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_k5orx")
 }],
 "loop": true,
-"name": &"idle_right",
+"name": &"idle",
 "speed": 8.0
 }, {
 "frames": [{
@@ -340,7 +259,9 @@ script = ExtResource("1_7lem4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bc8fl")
-animation = &"idle_left"
+animation = &"attack"
+frame = 4
+frame_progress = 0.67986
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)
@@ -350,3 +271,12 @@ shape = SubResource("RectangleShape2D_om8dk")
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+
+[node name="DefaultAttack" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="DefaultAttack"]
+position = Vector2(10.5, 0)
+
+[node name="Cooldown" type="Timer" parent="DefaultAttack"]
+wait_time = 0.4
+one_shot = true

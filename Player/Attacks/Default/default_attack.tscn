@@ -4,19 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://pukb2dmt7gbf" path="res://Assets/Player/attacks/default.png" id="2_n0qrk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3it44"]
-radius = 5.0
+radius = 4.47214
 
 [node name="Default_attack" type="Area2D"]
 rotation = 0.373887
+collision_mask = 2
 script = ExtResource("1_vaifk")
 
 [node name="Default" type="Sprite2D" parent="."]
-position = Vector2(-1, 5.75)
+position = Vector2(-2.38419e-07, 4.76837e-07)
 scale = Vector2(1.5625, 1.46875)
 texture = ExtResource("2_n0qrk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0.930915, -0.365237)
 shape = SubResource("CircleShape2D_3it44")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
