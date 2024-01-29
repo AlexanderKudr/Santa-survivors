@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 200
+@export var speed = 100
 @onready var timer: Timer = $DefaultAttack/Cooldown
 @onready var marker: Marker2D = $DefaultAttack/Marker2D 
 
@@ -22,9 +22,9 @@ func movement(motion: Vector2) -> Vector2:
 
 func player_flip(cursor_position: Vector2) -> void:
 	if cursor_position.x < 0:
-			$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.flip_h = true
 	else:
-			$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.flip_h = false
 
 func play_attack_animation() -> void:
 	$AnimatedSprite2D.play("attack", 0.4)

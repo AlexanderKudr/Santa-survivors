@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c68huds35udy0"
-path="res://.godot/imported/Snowmen.png-5fd266381125d531120af961a198ee30.ctex"
+path="res://.godot/imported/Snowmen.png-ac9f2769448eb075f2a3ad6e3355bdf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Mobs/Snowmen.png"
-dest_files=["res://.godot/imported/Snowmen.png-5fd266381125d531120af961a198ee30.ctex"]
+source_file="res://Enemies/Snowman/Snowmen.png"
+dest_files=["res://.godot/imported/Snowmen.png-ac9f2769448eb075f2a3ad6e3355bdf5.ctex"]
 
 [params]
 

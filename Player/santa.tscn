@@ -252,9 +252,7 @@ script = ExtResource("1_7lem4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bc8fl")
-animation = &"attack"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -4)
@@ -273,7 +271,3 @@ position = Vector2(10.5, 0)
 [node name="Cooldown" type="Timer" parent="DefaultAttack"]
 wait_time = 0.4
 one_shot = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
