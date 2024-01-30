@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctqchpavuluu4"]
+
+[ext_resource type="Texture2D" uid="uid://c68huds35udy0" path="res://Enemies/Snowman/Snowmen.png" id="1_g68be"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_007bw"]
+
+[node name="MobSnowman" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g68be")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_007bw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
