@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bok1g8lxo4p4b"]
+[gd_scene load_steps=8 format=3 uid="uid://bok1g8lxo4p4b"]
 
 [ext_resource type="Script" path="res://Enemies/BlueSlime/blue_slime.gd" id="1_dn4co"]
 [ext_resource type="Texture2D" uid="uid://bmun3xonhw83q" path="res://Assets/Mobs/Slimes/BlueSlime.png" id="2_u5q7g"]
@@ -21,6 +21,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ry03o"]
 resource_name = "run"
@@ -38,9 +50,38 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_6oja7"]
+resource_name = "attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27, 28, 29, 30, 31]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -14), Vector2(0, -10), Vector2(0, -6), Vector2(0, -4), Vector2(0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_idwf0"]
 _data = {
 "RESET": SubResource("Animation_ppsoi"),
+"attack": SubResource("Animation_6oja7"),
 "run": SubResource("Animation_ry03o")
 }
 

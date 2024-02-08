@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dpom0kfo67eti" path="res://Assets/Environment/1-sheet.png" id="1_wba48"]
 [ext_resource type="PackedScene" uid="uid://dl8au30qlr6a2" path="res://Player/santa.tscn" id="2_pnr7c"]
-[ext_resource type="PackedScene" uid="uid://bok1g8lxo4p4b" path="res://Enemies/BlueSlime/blue_slime.tscn" id="3_vqh7u"]
+[ext_resource type="PackedScene" uid="uid://bok1g8lxo4p4b" path="res://Enemies/Snowman/blue_slime.tscn" id="3_vqh7u"]
 [ext_resource type="PackedScene" uid="uid://uhtjjktu0jhv" path="res://Player/Cursor/custorm_cursor.tscn" id="4_310cs"]
 [ext_resource type="Script" path="res://Player/Cursor/custom_cursor.gd" id="5_lu0ag"]
 [ext_resource type="PackedScene" uid="uid://ctqchpavuluu4" path="res://Enemies/Snowman/mob_snowman.tscn" id="6_0esi5"]
@@ -40,10 +40,10 @@ layer_0/tile_data = PackedInt32Array(131074, 65537, 0, 65538, 65537, 0, 65539, 1
 position = Vector2(478, 251)
 
 [node name="Mob_blue_slime" parent="." instance=ExtResource("3_vqh7u")]
-position = Vector2(183, 119)
 
-[node name="CustormCursor" parent="." instance=ExtResource("4_310cs")]
+[node name="CustomCursor" parent="." instance=ExtResource("4_310cs")]
 script = ExtResource("5_lu0ag")
 
 [node name="MobSnowman" parent="." instance=ExtResource("6_0esi5")]
+visible = false
 position = Vector2(708, 441)

@@ -1,17 +1,19 @@
 extends CharacterBody2D
 
-
-@onready var player = get_node("/root/World/Player")
-@export var speed = 25
+@onready var player := get_node("/root/World/Player") 
+@onready var animation: AnimationPlayer = $AnimationPlayer
+@export var speed := 25
 
 var is_flipped = false
+var is_attacking = false
+
 func _physics_process(delta: float) -> void:
 	velocity = position.direction_to(player.position) * speed
+	print(velocity, 'here is the velocity')
 	move_and_slide()
 	
-
 	if velocity.length() > 0:
-		$AnimationPlayer.play("run")  
+		animation.play("run")  
 	
 		if velocity.x < 0:
 			$Sprite2D.flip_h = true
@@ -22,4 +24,10 @@ func _physics_process(delta: float) -> void:
 			is_flipped = false
 		
 	position += velocity * delta
-	move_and_slide()
+# 	attack(delta)
+	
+# func attack(delta: float) -> void:
+# 	if position.distance_to(player.position) < 100:
+# 		animation.play("attack")
+# 		velocity = position.direction_to(player.position) * speed    
+# 		print("testo", animation.current_animation_length)
