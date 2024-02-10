@@ -7,23 +7,24 @@ extends CharacterBody2D
 var is_flipped = false
 var is_attacking = false
 
+
 func _physics_process(delta: float) -> void:
 	velocity = position.direction_to(player.position) * speed
-	print(velocity, 'here is the velocity')
-	move_and_slide()
+	print(position, ' here is the init pos')
+	position += velocity * delta
 	
 	if velocity.length() > 0:
 		animation.play("run")  
-	
+		
 		if velocity.x < 0:
 			$Sprite2D.flip_h = true
 			is_flipped = true
-		
+			
 		else:
 			$Sprite2D.flip_h = false
 			is_flipped = false
-		
-	position += velocity * delta
+			
+	move_and_slide()
 # 	attack(delta)
 	
 # func attack(delta: float) -> void:

@@ -244,7 +244,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om8dk"]
-size = Vector2(10, 15.5)
+size = Vector2(16.5, 22.25)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -255,7 +255,7 @@ sprite_frames = SubResource("SpriteFrames_bc8fl")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -4)
+position = Vector2(-3, 4)
 shape = SubResource("RectangleShape2D_om8dk")
 
 [node name="Camera2D" type="Camera2D" parent="."]

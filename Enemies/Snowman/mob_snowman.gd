@@ -7,8 +7,6 @@ extends CharacterBody2D
 var is_flipped = false
 func _physics_process(delta: float) -> void:
 	velocity = position.direction_to(player.position) * speed
-	move_and_slide()
-	
 
 	if velocity.length() > 0:
 		$AnimationPlayer.play("run")  

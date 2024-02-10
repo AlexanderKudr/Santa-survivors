@@ -85,7 +85,7 @@ _data = {
 "run": SubResource("Animation_ry03o")
 }
 
-[node name="mob_blue_slime" type="CharacterBody2D"]
+[node name="MobBlueSlime" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_dn4co")
 
