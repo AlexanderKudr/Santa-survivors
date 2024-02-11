@@ -25,10 +25,10 @@ func _physics_process(delta: float) -> void:
 			is_flipped = false
 			
 	move_and_slide()
-# 	attack(delta)
+	attack(delta)
 	
-# func attack(delta: float) -> void:
-# 	if position.distance_to(player.position) < 100:
-# 		animation.play("attack")
-# 		velocity = position.direction_to(player.position) * speed    
-# 		print("testo", animation.current_animation_length)
+func attack(delta: float) -> void:
+	if position.distance_to(player.position) < 100:
+		animation.play("attack")
+		velocity = position.direction_to(player.position) * speed    
+		print("testo", animation.current_animation_length)
